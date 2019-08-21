@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/cgewecke/solidity-registry#readme",
   "devDependencies": {
+    "coveralls": "^3.0.6",
     "solidity-coverage": "^0.6.4",
     "truffle": "^5.0.32"
   }
