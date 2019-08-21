@@ -26,7 +26,7 @@ jobs:
       - run:
           name: Test & Coveralls
           command: |
-            npm run coverage && cat coverage/lcov.info | coveralls
+            npm run coverage && cat coverage/lcov.info | node_modules/.bin/coveralls
 
 workflows:
   version: 2

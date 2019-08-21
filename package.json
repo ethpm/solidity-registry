@@ -1,7 +1,7 @@
 {
   "name": "solidity-registry",
   "version": "1.0.0",
-  "description": "A simple ethpm package registry",
+  "description": "A simple implementation of an ERC1319 EthPM Package Registry",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cgewecke/solidity-registry.git"
+    "url": "git+https://github.com/ethpm/solidity-registry.git"
   },
-  "author": "Nicholas J Georgita <https://www.github.com/ngeorgita>",
+  "author": "Nick Gheorghita <nickgheorghita@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cgewecke/solidity-registry/issues"
+    "url": "https://github.com/ethpm/solidity-registry/issues"
   },
-  "homepage": "https://github.com/cgewecke/solidity-registry#readme",
+  "homepage": "https://github.com/ethpm/solidity-registry#readme",
   "devDependencies": {
     "coveralls": "^3.0.6",
     "solidity-coverage": "^0.6.4",
