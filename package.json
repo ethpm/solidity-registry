@@ -1,0 +1,27 @@
+{
+  "name": "solidity-registry",
+  "version": "1.0.0",
+  "description": "A simple ethpm package registry",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx truffle test",
+    "coverage": "npx solidity-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgewecke/solidity-registry.git"
+  },
+  "author": "Nicholas J Georgita <https://www.github.com/ngeorgita>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cgewecke/solidity-registry/issues"
+  },
+  "homepage": "https://github.com/cgewecke/solidity-registry#readme",
+  "devDependencies": {
+    "solidity-coverage": "^0.6.4",
+    "truffle": "^5.0.32"
+  }
+}

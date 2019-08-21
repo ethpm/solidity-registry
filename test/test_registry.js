@@ -36,7 +36,7 @@ contract('PackageRegistry', function(accounts) {
     assert(receipt.logs[0].event === "VersionRelease")
     assert(receipt.logs[0].args.packageName === name)
     assert(receipt.logs[0].args.version === version)
-    assert(receipt.logs[0].args.manifestURI === manifestUrri)
+    assert(receipt.logs[0].args.manifestURI === manifestUri)
 
     const ids = await packageRegistry.getAllReleaseIds(name, 0, 100);
     assert(ids.releaseIds.includes(releaseId));
