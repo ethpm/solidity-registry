@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/ethpm/solidity-registry.git"
   },
-  "author": "Nick Gheorghita <nickgheorghita@gmail.com>",
+  "author": "Nick Gheorghita <nickg@ethereum.org>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ethpm/solidity-registry/issues"
