@@ -7,8 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npx truffle test",
-    "coverage": "npx solidity-coverage"
+	"coverage": "npx truffle run coverage",
+    "test": "npx truffle test"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,10 @@
     "url": "https://github.com/ethpm/solidity-registry/issues"
   },
   "homepage": "https://github.com/ethpm/solidity-registry#readme",
-  "devDependencies": {
+  "dependencies": {
     "coveralls": "^3.0.6",
-    "solidity-coverage": "^0.6.4",
-    "truffle": "^5.0.32"
+    "solidity-coverage": "^0.7.9",
+    "truffle": "^5.1.40",
+	"web3": "^1.2.11"
   }
 }

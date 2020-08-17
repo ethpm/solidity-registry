@@ -1,9 +1,11 @@
-pragma solidity >=0.5.10;
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.6.0;
 
 
 /// @title EIP 1319 Smart Contract Package Registry Interface
 /// @author Piper Merriam <pipermerriam@gmail.com>, Christopher Gewecke <christophergewecke@gmail.com>
-contract PackageRegistryInterface {
+abstract contract PackageRegistryInterface {
 
     //
     // +-------------+
@@ -22,6 +24,7 @@ contract PackageRegistryInterface {
         string memory manifestURI
     )
         public
+        virtual
         returns (bytes32 releaseId);
 
     //
@@ -34,6 +37,7 @@ contract PackageRegistryInterface {
     /// @param packageId The package id to look up
     function getPackageName(bytes32 packageId)
         public
+        virtual
         view
         returns (string memory packageName);
 
@@ -42,6 +46,7 @@ contract PackageRegistryInterface {
     /// @param limit  The length of the slice
     function getAllPackageIds(uint offset, uint limit)
         public
+        virtual
         view
         returns (
             bytes32[] memory packageIds,
@@ -54,6 +59,7 @@ contract PackageRegistryInterface {
     /// @param limit  The length of the slice
     function getAllReleaseIds(string memory packageName, uint offset, uint limit)
         public
+        virtual
         view
         returns (
             bytes32[] memory releaseIds,
@@ -64,6 +70,7 @@ contract PackageRegistryInterface {
     /// @param releaseId Release id
     function getReleaseData(bytes32 releaseId)
         public
+        virtual
         view
         returns (
             string memory packageName,
@@ -76,6 +83,7 @@ contract PackageRegistryInterface {
     // @param version Version string (ex: '1.0.0')
     function generateReleaseId(string memory packageName, string memory version)
         public
+        virtual
         view
         returns (bytes32 releaseId);
 
@@ -84,13 +92,14 @@ contract PackageRegistryInterface {
     /// @param version Version string(ex: '1.0.0')
     function getReleaseId(string memory packageName, string memory version)
         public
+        virtual
         view
         returns (bytes32 releaseId);
 
     /// @dev Returns the number of packages stored on the registry
-    function numPackageIds() public view returns (uint totalCount);
+    function numPackageIds() public virtual view returns (uint totalCount);
 
     /// @dev Returns the number of releases for a given package name on the registry
     /// @param packageName Package name
-    function numReleaseIds(string memory packageName) public view returns (uint totalCount);
+    function numReleaseIds(string memory packageName) public virtual view returns (uint totalCount);
 }

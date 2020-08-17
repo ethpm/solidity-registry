@@ -1,4 +1,6 @@
-pragma solidity >=0.5.10;
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.6.0;
 
 import {PackageRegistryInterface} from "./PackageRegistryInterface.sol";
 import {Ownable} from "./Ownable.sol";
@@ -69,6 +71,7 @@ contract PackageRegistry is PackageRegistryInterface, Ownable {
         string memory manifestURI
     )
         public
+        override
         onlyOwner
         returns (bytes32)
     {
@@ -140,6 +143,7 @@ contract PackageRegistry is PackageRegistryInterface, Ownable {
     /// @param packageId The package id to look up
     function getPackageName(bytes32 packageId)
         public
+        override
         view
         returns (string memory packageName)
     {
@@ -153,6 +157,7 @@ contract PackageRegistry is PackageRegistryInterface, Ownable {
     /// @param limit  The length of the slice
     function getAllPackageIds(uint offset, uint limit)
         public
+        override
         view
         returns (
             bytes32[] memory packageIds,
@@ -194,6 +199,7 @@ contract PackageRegistry is PackageRegistryInterface, Ownable {
     /// @param limit  The length of the slice
     function getAllReleaseIds(string memory packageName, uint offset, uint limit)
         public
+        override
         view
         onlyIfPackageExists(packageName)
         returns (
@@ -239,6 +245,7 @@ contract PackageRegistry is PackageRegistryInterface, Ownable {
     /// @param releaseId Release id
     function getReleaseData(bytes32 releaseId)
         public
+        override
         view
         returns (
             string memory packageName, string memory version,
@@ -255,6 +262,7 @@ contract PackageRegistry is PackageRegistryInterface, Ownable {
     /// @param version Version string(ex: '1.0.0')
     function getReleaseId(string memory packageName, string memory version)
         public
+        override
         view
         onlyIfPackageExists(packageName)
         onlyIfReleaseExists(packageName, version)
@@ -264,7 +272,7 @@ contract PackageRegistry is PackageRegistryInterface, Ownable {
     }
 
     /// @dev Returns the number of packages stored on the registry
-    function numPackageIds() public view returns (uint totalCount)
+    function numPackageIds() public override view returns (uint totalCount)
     {
         return packageCount;
     }
@@ -273,6 +281,7 @@ contract PackageRegistry is PackageRegistryInterface, Ownable {
     /// @param packageName Package name
     function numReleaseIds(string memory packageName)
         public
+        override
         view
         onlyIfPackageExists(packageName)
         returns (uint totalCount)
@@ -327,6 +336,7 @@ contract PackageRegistry is PackageRegistryInterface, Ownable {
         string memory version
     )
         public
+        override
         view
         returns (bytes32)
     {
