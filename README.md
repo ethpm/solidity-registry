@@ -5,6 +5,13 @@
 
 A simple implementation of an ERC1319 EthPM Package Registry
 
+### ethpm registry
+`PackageRegistry` is available at...
+- `ethpm://registry.ethpm.eth:3/standard@0.1.0`
+
+An un-authorized version of `PackageRegistry` is available at...
+- `ethpm://registry.ethpm.eth:3/unauthorized@0.1.0`
+
 ### Install
 ```
 npm install
